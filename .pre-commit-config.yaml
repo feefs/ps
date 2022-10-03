@@ -1,0 +1,8 @@
+repos:
+- repo: local
+  hooks:
+  - id: yapf
+    name: yapf
+    language: script
+    entry: ./scripts/yapf.sh
+    types: [python]
