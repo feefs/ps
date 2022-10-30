@@ -14,4 +14,5 @@ class Solution:
         if 1 + dp[i + width] > dp[i]:
           if s[i:i + width] == s[i + width:i + (2 * width)]:
             dp[i] = max(dp[i], 1 + dp[i + width])
+
     return dp[0]

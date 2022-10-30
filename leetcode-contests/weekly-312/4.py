@@ -9,7 +9,6 @@ class Solution:
           nodes with the same value in different components can't form a good path with each other
             this is because we're adding edges with lower value nodes first!
     """
-
     N = len(vals)
 
     # Union Find

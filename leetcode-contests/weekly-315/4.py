@@ -77,6 +77,6 @@ class Solution:
           l += 1
         # l - l_bound subarrays end at r, add 1 because the values are indices
         result += (l - l_bound) + 1
-
       r += 1
+
     return result
