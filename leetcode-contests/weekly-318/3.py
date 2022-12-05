@@ -7,7 +7,7 @@ class Solution:
       return sum([heapq.heappop(costs) for _ in range(k)])
 
     l, r = [n for n in costs[:candidates]
-           ], [n for n in costs[len(costs) - candidates:]]
+            ], [n for n in costs[len(costs) - candidates:]]
     heapq.heapify(l)
     heapq.heapify(r)
 
