@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 if [[ $# -ne 1 ]]; then
     echo "Supply a folder name! Example:"
@@ -6,7 +6,12 @@ if [[ $# -ne 1 ]]; then
     exit 1
 fi
 
-DIR=leetcode-contests/$@
+DIR=leetcode-contests/$1
+
+if [[ -d $DIR ]]; then
+    echo "Directory $DIR already exists!"
+    exit 1
+fi
 
 mkdir $DIR
 for i in {1..4}; do
