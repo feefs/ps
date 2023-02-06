@@ -15,5 +15,5 @@ fi
 
 mkdir $DIR
 for i in {1..4}; do
-    echo $'# ' >> $DIR/$i.py
+    echo -n $'# ' >> $DIR/$i.py
 done
