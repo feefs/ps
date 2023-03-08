@@ -1,16 +1,16 @@
 [tool.poetry]
-name = "cp"
+name = "ps"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
 yapf = "^0.32.0"
-pre-commit = "^2.20.0"
+pre-commit = "^3.1.1"
 
 [tool.yapf]
 based_on_style = "google"
