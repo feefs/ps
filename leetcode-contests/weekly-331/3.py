@@ -1,3 +1,4 @@
+# 2560. House Robber IV
 class Solution:
   def minCapability(self, nums: List[int], k: int) -> int:
     # binary search for the lowest valid capability value

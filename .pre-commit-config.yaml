@@ -4,5 +4,11 @@ repos:
   - id: yapf
     name: yapf
     language: script
-    entry: ./scripts/yapf.sh
+    entry: ./scripts/pre-commit/yapf.sh
     types: [python]
+  - id: problem_number
+    name: problem_number
+    language: script
+    entry: ./scripts/pre-commit/problem_number.sh
+    types: [python]
+    files: leetcode-contests.*\.py
