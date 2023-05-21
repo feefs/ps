@@ -2,7 +2,7 @@
 class Solution:
   def minimumTime(self, grid: List[List[int]]) -> int:
     """
-    modified djikstras
+    modified dijkstras
       if an adjacent cell needs more time, repeatedly revisit a previous cell and the current one
       check if we are stuck at the starting cell, otherwise a previous cell is guaranteed to exist
     """
