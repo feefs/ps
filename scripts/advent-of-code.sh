@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 if [[ $# -ne 2 ]]; then
     echo "Enter a year and day! Example:"
@@ -13,12 +13,43 @@ if [[ -d $DIR ]]; then
     exit 1
 fi
 
-mkdir -p $DIR
-touch $DIR/input.txt
-for i in {1..2}; do
-    cat << EOF > $DIR/solution$i.py
-import os
+### GO 2023
+mkdir -p "$DIR"
+cat << EOF > "$DIR/main.go"
+package main
 
-f = open(os.path.join(os.path.dirname(__file__), "input.txt"))
+import (
+	"errors"
+	"util"
+)
+
+func partOne(lines []string) error {
+	return errors.New("part not implemented")
+}
+
+func partTwo(lines []string) error {
+	return errors.New("part not implemented")
+}
+
+func main() {
+	util.ParseAndRun(partOne, partTwo)
+}
 EOF
-done
+pushd "$DIR" > /dev/null
+go mod init advent
+go mod edit -replace util=../util
+go get util@v0.0.0
+go mod tidy
+popd > /dev/null
+touch "$DIR/input.txt"
+
+### PYTHON 2022
+# mkdir -p "$DIR"
+# touch $DIR/input.txt
+# for i in {1..2}; do
+#     cat << EOF > $DIR/solution$i.py
+# import os
+
+# f = open(os.path.join(os.path.dirname(__file__), "input.txt"))
+# EOF
+# done
