@@ -14,7 +14,7 @@ func runPart(part Part) error {
 	if err != nil {
 		return err
 	}
-	lineStr := string(b)
+	lineStr := strings.TrimSpace(string(b))
 	lines := strings.Split(lineStr, "\n")
 
 	if err := part(lines); err != nil {
