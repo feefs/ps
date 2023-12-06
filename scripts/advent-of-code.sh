@@ -35,6 +35,7 @@ func main() {
 	util.ParseAndRun(partOne, partTwo)
 }
 EOF
+echo "package main" > "$DIR/parsing.go"
 pushd "$DIR" > /dev/null
 go mod init advent
 go mod edit -replace util=../util
