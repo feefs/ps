@@ -1,0 +1,28 @@
+[package]
+name = "aoc"
+version = "0.1.0"
+edition = "2021"
+description = "A CLI tool to pull Advent of Code inputs"
+license = "MIT"
+repository = "https://github.com/feefs/ps"
+keywords = ["cli"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+ansi_term = "0.12.1"
+chrono = "0.4.31"
+chrono-tz = "0.8.5"
+clap = { version = "4.4.18", features = ["derive"] }
+eyre = "0.6.11"
+inquire = "0.6.2"
+serde = { version = "1.0.195", features = ["derive"] }
+toml = "0.8.8"
+ureq = "2.9.1"
+xdg = "2.5.2"
+
+[lints.rust]
+unused_crate_dependencies = "deny"
+[lints.clippy]
+cargo = "warn"
+pedantic = "warn"
+multiple_crate_versions  = { level = "allow", priority = 1 }
