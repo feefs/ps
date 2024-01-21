@@ -1,1 +1,3 @@
 .venv
+advent-of-code/**/input.txt
+advent-of-code/aoc/target/
