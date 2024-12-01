@@ -13,7 +13,7 @@ if [[ -d $DIR ]]; then
     exit 1
 fi
 
-### GO 2023
+### GO 2023 2024
 mkdir -p "$DIR"
 cat << EOF > "$DIR/main.go"
 package main
@@ -43,6 +43,7 @@ go get util@v0.0.0
 go mod tidy
 popd > /dev/null
 touch "$DIR/input.txt"
+echo "Set up directory: $DIR"
 
 ### PYTHON 2022
 # mkdir -p "$DIR"
