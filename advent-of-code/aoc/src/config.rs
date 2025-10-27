@@ -12,7 +12,7 @@ pub(super) struct Auth {
 }
 
 pub(super) fn auth_path() -> Result<PathBuf> {
-    Ok(BaseDirectories::with_prefix(PKG_NAME)?.place_config_file("auth.toml")?)
+    Ok(BaseDirectories::with_prefix(PKG_NAME).place_config_file("auth.toml")?)
 }
 
 pub(super) fn write_auth() -> Result<()> {
