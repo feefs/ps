@@ -1,11 +1,6 @@
 repos:
 - repo: local
   hooks:
-  - id: yapf
-    name: yapf
-    language: script
-    entry: ./scripts/pre-commit/yapf.sh
-    types: [python]
   - id: problem_number
     name: problem_number
     language: script

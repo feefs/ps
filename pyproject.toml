@@ -1,22 +1,12 @@
-[tool.poetry]
+[project]
 name = "ps"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+description = "Add your description here"
 readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
 
-[tool.poetry.dependencies]
-python = "^3.11"
-
-[tool.poetry.group.dev.dependencies]
-yapf = "^0.40.2"
-pre-commit = "^3.1.1"
-
-[tool.yapf]
-based_on_style = "google"
-blank_line_before_nested_class_or_def = false
-indent_width = 2
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[dependency-groups]
+dev = [
+    "pre-commit>=4.3.0",
+]
