@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "args": [],
+      "console": "internalConsole",
+      "cwd": "${workspaceRoot}",
+      "name": "Debug Bazel C++",
+      "program": "${workspaceRoot}/bazel-bin/main",
+      "request": "launch",
+      // https://github.com/vadimcn/codelldb/discussions/517
+      "sourceMap": {
+        "/proc/self/cwd": "${workspaceFolder}"
+      },
+      "type": "lldb"
+    }
+  ],
+  "version": "0.2.0"
+}
