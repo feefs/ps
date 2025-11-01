@@ -7,3 +7,9 @@ repos:
     entry: ./scripts/pre-commit/problem_number.sh
     types: [python]
     files: leetcode-contests.*\.py
+  - id: buildifier
+    name: buildifier
+    language: script
+    entry: ./scripts/pre-commit/buildifier.sh
+    types: [bazel]
+    files: advent-of-code/2025/.*
