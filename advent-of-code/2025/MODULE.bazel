@@ -1,6 +1,7 @@
 """Advent of code 2025."""
 
 bazel_dep(name = "rules_cc", version = "0.2.13")
+bazel_dep(name = "abseil-cpp", version = "20250814.1")
 bazel_dep(name = "toolchains_llvm", version = "1.5.0")
 
 llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm")
@@ -12,6 +13,7 @@ register_toolchains("@llvm_toolchain//:all")
 bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
 git_override(
     module_name = "hedron_compile_commands",
-    commit = "abb61a688167623088f8768cc9264798df6a9d10",
+    # https://github.com/hedronvision/bazel-compile-commands-extractor/pull/219
+    commit = "f5fbd4cee671d8d908f37c83abaf70fba5928fc7",
     remote = "https://github.com/hedronvision/bazel-compile-commands-extractor.git",
 )
