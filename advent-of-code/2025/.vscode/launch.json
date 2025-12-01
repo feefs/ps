@@ -1,11 +1,12 @@
 {
   "configurations": [
     {
-      "args": [],
+      "args": ["--day=1", "--part=1"],
       "console": "internalConsole",
       "cwd": "${workspaceRoot}",
       "name": "Debug Bazel C++",
       "program": "${workspaceRoot}/bazel-bin/main",
+      "preLaunchTask": "Build",
       "request": "launch",
       // https://github.com/vadimcn/codelldb/discussions/517
       "sourceMap": {
