@@ -18,7 +18,7 @@
 #include "util/init.hh"
 #include "util/parts.hh"
 
-absl::flat_hash_map<int, std::pair<util::Part, util::Part>> parts{
+const absl::flat_hash_map<int, std::pair<util::Part, util::Part>> kParts{
     // {1, {&day01::PartOne, &day01::PartTwo}},
     // {2, {&day02::PartOne, &day02::PartTwo}},
     // {3, {&day03::PartOne, &day03::PartTwo}},
@@ -33,9 +33,9 @@ absl::flat_hash_map<int, std::pair<util::Part, util::Part>> parts{
     // {12, {&day12::PartOne, &day12::PartTwo}},
 };
 
-absl::StatusOr<util::Part> getPart(util::RunOptions run_opts) {
-  auto it = parts.find(run_opts.day);
-  if (it == parts.end()) {
+absl::StatusOr<util::Part> GetPart(util::RunOptions run_opts) {
+  auto it = kParts.find(run_opts.day);
+  if (it == kParts.end()) {
     return absl::UnimplementedError(
         absl::Substitute("No function pointer found for day $0 part $1",
                          run_opts.day, run_opts.part));
@@ -49,7 +49,7 @@ int main(int argc, char* argv[]) {
   LOG(INFO) << absl::Substitute("Running day $0 part $1...", run_opts.day,
                                 run_opts.part);
 
-  absl::StatusOr<util::Part> get_part_result = getPart(run_opts);
+  absl::StatusOr<util::Part> get_part_result = GetPart(run_opts);
   if (!get_part_result.ok()) {
     LOG(ERROR) << get_part_result.status();
     return EXIT_FAILURE;
