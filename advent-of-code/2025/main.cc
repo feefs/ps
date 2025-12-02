@@ -55,8 +55,8 @@ int main(int argc, char* argv[]) {
     return EXIT_FAILURE;
   }
 
-  absl::Status run_part_result = util::RunPart(get_part_result.value());
-  if (!run_part_result.ok()) {
+  if (absl::Status run_part_result = util::RunPart(*get_part_result);
+      !run_part_result.ok()) {
     LOG(ERROR) << run_part_result;
     return EXIT_FAILURE;
   }
