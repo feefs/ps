@@ -1,3 +1,15 @@
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 
 package(default_visibility = ["//:__pkg__"])
+
+cc_library(
+    name = "day01",
+    srcs = ["day01.cc"],
+    hdrs = ["day01.hh"],
+    deps = [
+        "@abseil-cpp//absl/log",
+        "@abseil-cpp//absl/status",
+        "@abseil-cpp//absl/status:statusor",
+        "@abseil-cpp//absl/strings",
+    ],
+)
