@@ -4,7 +4,7 @@
 #include "absl/status/statusor.h"
 #include "absl/strings/substitute.h"
 #include "days/day01.hh"
-// #include "days/day02.hh"
+#include "days/day02.hh"
 // #include "days/day03.hh"
 // #include "days/day04.hh"
 // #include "days/day05.hh"
@@ -20,7 +20,7 @@
 
 const absl::flat_hash_map<int, std::pair<util::Part, util::Part>> kParts{
     {1, {&day01::PartOne, &day01::PartTwo}},
-    // {2, {&day02::PartOne, &day02::PartTwo}},
+    {2, {&day02::PartOne, &day02::PartTwo}},
     // {3, {&day03::PartOne, &day03::PartTwo}},
     // {4, {&day04::PartOne, &day04::PartTwo}},
     // {5, {&day05::PartOne, &day05::PartTwo}},
