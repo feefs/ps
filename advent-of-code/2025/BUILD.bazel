@@ -6,7 +6,7 @@ cc_binary(
     srcs = ["main.cc"],
     deps = [
         "//days:day01",
-        # "//days:day02",
+        "//days:day02",
         # "//days:day03",
         # "//days:day04",
         # "//days:day05",
