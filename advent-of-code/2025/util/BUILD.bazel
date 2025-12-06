@@ -26,3 +26,10 @@ cc_library(
         "@abseil-cpp//absl/strings",
     ],
 )
+
+cc_library(
+    name = "grid",
+    srcs = ["grid.cc"],
+    hdrs = ["grid.hh"],
+    visibility = ["//days:__pkg__"],
+)
