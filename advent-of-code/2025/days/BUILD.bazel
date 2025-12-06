@@ -40,3 +40,14 @@ cc_library(
         "@abseil-cpp//absl/strings",
     ],
 )
+
+cc_library(
+    name = "day04",
+    srcs = ["day04.cc"],
+    hdrs = ["day04.hh"],
+    deps = [
+        "//util:grid",
+        "@abseil-cpp//absl/log",
+        "@abseil-cpp//absl/status",
+    ],
+)
