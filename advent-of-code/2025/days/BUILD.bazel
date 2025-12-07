@@ -51,3 +51,16 @@ cc_library(
         "@abseil-cpp//absl/status",
     ],
 )
+
+cc_library(
+    name = "day05",
+    srcs = ["day05.cc"],
+    hdrs = ["day05.hh"],
+    deps = [
+        "@abseil-cpp//absl/log",
+        "@abseil-cpp//absl/log:check",
+        "@abseil-cpp//absl/status",
+        "@abseil-cpp//absl/status:statusor",
+        "@abseil-cpp//absl/strings",
+    ],
+)
