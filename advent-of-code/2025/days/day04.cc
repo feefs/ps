@@ -7,19 +7,24 @@
 namespace day04 {
 
 absl::Status PartOne(std::vector<std::string> lines) {
-  util::Grid grid = util::Grid::Create(lines);
+  absl::StatusOr<std::unique_ptr<util::Grid>> create_grid_result =
+      util::Grid::Create(lines);
+  if (!create_grid_result.ok()) {
+    return create_grid_result.status();
+  }
+  std::unique_ptr<util::Grid> grid = *std::move(create_grid_result);
 
   int result = 0;
-  for (int i = 0; i < grid.m; i++) {
-    for (int j = 0; j < grid.n; j++) {
-      if (grid.rows[i][j] != '@') {
+  for (int i = 0; i < grid->m; i++) {
+    for (int j = 0; j < grid->n; j++) {
+      if (grid->rows[i][j] != '@') {
         continue;
       }
       int adjacent = 0;
       for (auto dir : util::AllDirs()) {
         int ni = i + dir.dx;
         int nj = j + dir.dy;
-        if (grid.inBounds(ni, nj) && grid.rows[ni][nj] == '@') {
+        if (grid->inBounds(ni, nj) && grid->rows[ni][nj] == '@') {
           adjacent += 1;
         }
       }
@@ -36,27 +41,32 @@ absl::Status PartOne(std::vector<std::string> lines) {
 }
 
 absl::Status PartTwo(std::vector<std::string> lines) {
-  util::Grid grid = util::Grid::Create(lines);
+  absl::StatusOr<std::unique_ptr<util::Grid>> create_grid_result =
+      util::Grid::Create(lines);
+  if (!create_grid_result.ok()) {
+    return create_grid_result.status();
+  }
+  std::unique_ptr<util::Grid> grid = *std::move(create_grid_result);
 
   int result = 0;
   bool removed = false;
   do {
     removed = false;
-    for (int i = 0; i < grid.m; i++) {
-      for (int j = 0; j < grid.n; j++) {
-        if (grid.rows[i][j] != '@') {
+    for (int i = 0; i < grid->m; i++) {
+      for (int j = 0; j < grid->n; j++) {
+        if (grid->rows[i][j] != '@') {
           continue;
         }
         int adjacent = 0;
         for (auto dir : util::AllDirs()) {
           int ni = i + dir.dx;
           int nj = j + dir.dy;
-          if (grid.inBounds(ni, nj) && grid.rows[ni][nj] == '@') {
+          if (grid->inBounds(ni, nj) && grid->rows[ni][nj] == '@') {
             adjacent += 1;
           }
         }
         if (adjacent < 4) {
-          grid.rows[i][j] = '.';
+          grid->rows[i][j] = '.';
           result += 1;
           removed = true;
         }

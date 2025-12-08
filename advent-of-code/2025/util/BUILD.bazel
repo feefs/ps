@@ -32,4 +32,9 @@ cc_library(
     srcs = ["grid.cc"],
     hdrs = ["grid.hh"],
     visibility = ["//days:__pkg__"],
+    deps = [
+        "@abseil-cpp//absl/memory",
+        "@abseil-cpp//absl/status:statusor",
+        "@abseil-cpp//absl/strings",
+    ],
 )
