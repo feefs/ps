@@ -12,7 +12,7 @@ cc_binary(
         "//days:day05",
         "//days:day06",
         "//days:day07",
-        # "//days:day08",
+        "//days:day08",
         # "//days:day09",
         # "//days:day10",
         # "//days:day11",
