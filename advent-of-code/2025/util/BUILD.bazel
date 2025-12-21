@@ -1,6 +1,9 @@
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 
-package(default_visibility = ["//:__pkg__"])
+package(
+    default_visibility = ["//:__pkg__"],
+    features = ["layering_check"],
+)
 
 cc_library(
     name = "init",

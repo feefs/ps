@@ -11,7 +11,7 @@
 #include "days/day06.hh"
 #include "days/day07.hh"
 #include "days/day08.hh"
-// #include "days/day09.hh"
+#include "days/day09.hh"
 // #include "days/day10.hh"
 // #include "days/day11.hh"
 // #include "days/day12.hh"
@@ -27,7 +27,7 @@ const absl::flat_hash_map<int, std::pair<util::Part, util::Part>> kParts{
     {6, {&day06::PartOne, &day06::PartTwo}},
     {7, {&day07::PartOne, &day07::PartTwo}},
     {8, {&day08::PartOne, &day08::PartTwo}},
-    // {9, {&day09::PartOne, &day09::PartTwo}},
+    {9, {&day09::PartOne, &day09::PartTwo}},
     // {10, {&day10::PartOne, &day10::PartTwo}},
     // {11, {&day11::PartOne, &day11::PartTwo}},
     // {12, {&day12::PartOne, &day12::PartTwo}},

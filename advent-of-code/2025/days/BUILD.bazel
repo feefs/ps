@@ -1,6 +1,9 @@
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 
-package(default_visibility = ["//:__pkg__"])
+package(
+    default_visibility = ["//:__pkg__"],
+    features = ["layering_check"],
+)
 
 cc_library(
     name = "day01",
@@ -103,5 +106,18 @@ cc_library(
         "@abseil-cpp//absl/status",
         "@abseil-cpp//absl/status:statusor",
         "@abseil-cpp//absl/strings",
+    ],
+)
+
+cc_library(
+    name = "day09",
+    srcs = ["day09.cc"],
+    hdrs = ["day09.hh"],
+    deps = [
+        "@abseil-cpp//absl/log",
+        "@abseil-cpp//absl/status",
+        "@abseil-cpp//absl/status:statusor",
+        "@abseil-cpp//absl/strings",
+        "@boost.geometry",
     ],
 )

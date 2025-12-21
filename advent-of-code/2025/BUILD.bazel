@@ -1,6 +1,8 @@
 load("@hedron_compile_commands//:refresh_compile_commands.bzl", "refresh_compile_commands")
 load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
 
+package(features = ["layering_check"])
+
 cc_binary(
     name = "main",
     srcs = ["main.cc"],
@@ -13,7 +15,7 @@ cc_binary(
         "//days:day06",
         "//days:day07",
         "//days:day08",
-        # "//days:day09",
+        "//days:day09",
         # "//days:day10",
         # "//days:day11",
         # "//days:day12",

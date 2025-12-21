@@ -1,6 +1,5 @@
 build --cxxopt="-std=c++20"
 build --cxxopt="-Wall" --cxxopt="-Wextra"
 build --cxxopt="-Werror"
-build --features=layering_check
 build --compilation_mode=dbg
 build --incompatible_strict_action_env
